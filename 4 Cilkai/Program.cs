@@ -50,20 +50,41 @@ namespace Pirma_Ciklai
             //}
 
             // 1 Uzduotis
-            Console.WriteLine(" Prasau iveskite bet koki skaiciu");
-            string sk = Console.ReadLine();
-            int input = int.Parse(sk);
-            Console.Clear();
+            //Console.WriteLine(" Prasau iveskite bet koki skaiciu");
+            //string sk = Console.ReadLine();
+            //int input = int.Parse(sk);
+            //Console.Clear();
 
-            int suma = input + i;
-            for (int i = 1; i < input; i++)
+            //int suma = input + i;
+            //for (int i = 1; i < input; i++)
 
 
+            //{
+            //    int suma = input + i;
+            //    Console.WriteLine(suma);
+
+            //}
+            #region Kolekcijos
+
+            string[] savaitesDienos =
             {
-                int suma = input + i;
-                Console.WriteLine(suma);
+                "Pirmadienis",
+                "Antradienis",
+                "Treciadienis",
+                "Ketvirtadienis",
+                "Penktadienis",
+                "Sestadienis",
+                "Sekmadienis",
 
+            };
+            for (int i = 0; i < savaitesDienos.Length; i++)
+            {
+                Console.WriteLine(savaitesDienos[i]);
             }
+
+
+            #endregion
+
 
         }
     }
