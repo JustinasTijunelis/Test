@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace Generic
 {
-    public class Type <T1,T2>
+    // Tecia uzduotis 1_1
+    public class ShowValues<T1,T2>
     {
         public T1 Tipas1 { get; set; }
         public T2 Tipas2 { get; set; }
+        public List<T1> MySelfCreatedList { get; private set; }
+
 
         public void GetType()
         {
@@ -17,6 +20,19 @@ namespace Generic
             Console.WriteLine(Tipas2.GetType());
             Console.ReadKey();
 
+        }
+        //Trecia uzduotis 1_2
+         public  T1 GetType (T1 input)
+        {
+            Console.WriteLine(input.GetType().Name);  // Su T1 inputu,  "Name" Tipo pavadinimas
+            Console.ReadKey();
+            return input;
+
+        }
+        // Trecios uzduoties papildymas 1_1
+        public void MySelfCreatedListDelete()
+        {
+            MySelfCreatedList.Clear();
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿namespace Generic
 {
+    
     public class GenericClass <T1,T2>
     {
+        //Pirma uzduotis 1_2
         public T1 Property { get; set; }
         public T2 Property2 { get; set; }
 
@@ -26,15 +28,25 @@
         }
         public static void Main(string[] args)
         {
-            //Validate<Validation>(new Validation { Name = "Jonas", LastName="Petrauskas"});
-            //Validate<string>()
-            
+            // Antra uzsuoti 1_1        Kaip iskviesti Generik Klaseje esanti metoda
+            var validation  = new GenericClass<T1,T2> ();
+            validation.Validate<string>(null);
+
+            var type = new ShowValues<T1, T2>();
 
         }
+        // Pirma uzsuoti 1_1   Kaip sukurti Metoda Generic klaseje
         private void Validate<T> (T item)
         {
-            Console.WriteLine();
+            if (item == null)
+            {
+                Console.WriteLine("Error");
+            }
+
         }
+
+        
+
     }
-    
+
 }

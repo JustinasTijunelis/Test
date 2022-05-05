@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Generic
 {
+    public class Krepsinis { }
+    public class Futbolas { }
+    public class Badmentonas { }
     public class Olimpiada<B,V,F>
 
         where B : Krepsinis

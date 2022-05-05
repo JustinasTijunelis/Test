@@ -8,6 +8,7 @@ namespace Generic
 {
     internal class FourSideGeometricFigure
     {
+        // Antra uzduotis 1_2
         public string Name { get; set; }
         public double Base { get; set; }
         public double Height { get; set; }
@@ -22,14 +23,11 @@ namespace Generic
         {
             return GetArea().ToString();
         }
-        //public override string ToString1()
-        //{
-        //    return Name.ToString();
-        //}
+        
     }
     public class Generator <T>
     {
-        public void Show (T Item)
+        public void Show (T Item)  //perduoto objekto ToString() grąžintą reikšmę
         {
             Console.WriteLine(Item);
         }
