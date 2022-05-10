@@ -1,6 +1,6 @@
 ﻿namespace Extension
 {
-
+    
     public class Class
     {
         public static void Main(string[] args)
@@ -12,6 +12,8 @@
             string sentence = "Parasytas sakinys";
             bool flag = num.BoolTrue();
             Console.WriteLine(firstName.Email(lastName));  //isvedimas i konsole
+            
+
         }
 
     }
