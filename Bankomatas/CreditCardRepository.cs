@@ -13,9 +13,9 @@ namespace Bankomatas
         public CreditCardRepository()
         {
             CreditCards = new List<CreditCard>();
-            
-           var csvLines = System.IO.File.ReadAllLines(@"C:\Users\User\Desktop\VStudio\Bankomatas\CardPin.csv");
-           
+
+            var csvLines = System.IO.File.ReadAllLines(@"C:\Users\User\Desktop\VStudio\Bankomatas\CardPin.csv");
+
             for (int i = 0; i < csvLines.Length; i++)
             {
                 string[] pin = csvLines[i].Split(';');
@@ -26,6 +26,16 @@ namespace Bankomatas
 
                 CreditCards.Add(new CreditCard(pin));
             }
+
+        }
+        public void Access (string pinInput)
+        {
+            //var cardPin = new List<CreditCard> [0];
+            //if (Console.ReadLine().Contains(cardPin[0]))
+            //{ Console.WriteLine("teisingai"); }
+
+            //else { Console.WriteLine("neteisingai"); }
+
         }
     }
 

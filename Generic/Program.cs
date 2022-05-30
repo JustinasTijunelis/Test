@@ -26,8 +26,32 @@
             Property2 = value;
             return value;
         }
+        public string ToDouble (string value)
+        {
+            Convert.ToDouble(value);
+            return value;   
+        }
         public static void Main(string[] args)
         {
+            try
+            {
+                var x = new GenericClass<T1,T2> ();
+                string v = "10";
+                x.ToDouble(v);
+                //statements
+            }
+            catch (Exception ex)
+            {
+                //error handling  code
+                
+            }
+            finally
+            {
+                //statements to be executed
+            }
+
+
+
             // Antra uzsuoti 1_1        Kaip iskviesti Generik Klaseje esanti metoda
             var validation  = new GenericClass<T1,T2> ();
             validation.Validate<string>(null);

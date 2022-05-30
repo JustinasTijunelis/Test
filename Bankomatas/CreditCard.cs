@@ -12,7 +12,7 @@ namespace Bankomatas
         public string CardPin { get; set; }
         public string CardUserPin { get; set; }
         public decimal CardAmount { get; set; }
-        public List<CreditCard> PinCard { get; set; }
+      
         public CreditCard (string[] pin)
         {   
             CardPin = pin[0].Trim('"');
@@ -24,14 +24,14 @@ namespace Bankomatas
             
             Console.WriteLine($" Jusu saskaitos likutis {CardAmount}");
         }
-        public void CashOut(decimal CardAmoun)
+        public static decimal CashOut(decimal CardAmount)
         {
             Console.WriteLine($"Jusu inigu likutis {CardAmount} EUR");
             Console.WriteLine("Iveskite norima papildyti suma");
             decimal addAmount = Convert.ToDecimal(Console.ReadLine());
-            CardAmoun = addAmount * CardAmoun;
-            Console.WriteLine($"Jusu esamas balansas {CardAmoun} EUR");
-
+            decimal CardAmount2 = addAmount + CardAmount;
+            Console.WriteLine($"Jusu esamas balansas {CardAmount} EUR");
+            return CardAmount2;
         }
     }
 }
