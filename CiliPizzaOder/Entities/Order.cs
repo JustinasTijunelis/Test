@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace CiliPizzaOder.Entities
 {
-    public class Order:Product
+    public class Order
     {
 
-        
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public int Quantity { get; set; }
         public string WaiterName { get; set; }
         public string Id { get; set; }
         public int TableId { get; set; }
@@ -24,40 +26,35 @@ namespace CiliPizzaOder.Entities
         public Order(string name, decimal price, int quantity,string waiterName, string id,
             int tableId, DateTime dateTime, bool paid) 
         {
+            Name = name;
+            Price = price;
+            Quantity = quantity;
             WaiterName = waiterName;
             Id = id;
             TableId = tableId;
             DateTime = dateTime;     //Reikes uzsetinti Console.WriteLine(DateTime.ToString("MM/dd/yyyy HH:mm"));
             Paid = paid;
-            TableRepository = new List<Order>();
+            //TableRepository = new List<Order>();
             TurnoverOfTheDay = new List<Order>();
             WaitressTips = new List<decimal>() { 10, 20 };
         }
-        public Order(DateTime date, string name)
+       
+        public void PrintList(List<decimal> Name)
         {
-            
-            WaiterName = "Justinas";
-        }
-        public void PrintList(List<decimal> name)
-        {
-            foreach (var item in name) //Listo atvaizdavimas consoleje.
-            {
-                Console.WriteLine($"{item} EUR");
-            }
-            Console.WriteLine("----------------------");
-            Console.WriteLine($"Your tips TODAY is {name.OrderByDescending(x => x).Take(2).Sum()} EUR");
-            Console.ReadKey();
-        }
-        public void PrintList(List<Order> Name)
-        {
-            Name = new List<Order>();
             foreach (var item in Name) //Listo atvaizdavimas consoleje.
             {
-
-                Console.WriteLine(item);
-
+                Console.WriteLine($"{Name} EUR");
             }
+            Console.WriteLine("----------------------");
+            Console.WriteLine($"Your tips TODAY is {Name.OrderByDescending(x => x).Take(2).Sum()} EUR");
             Console.ReadKey();
         }
+        public void PrintOrderList(List<Order> Name)
+        {
+            Name.ForEach(e => Console.WriteLine(e));
+            
+            Console.ReadKey();
+        }
+        
     }
 }

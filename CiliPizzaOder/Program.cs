@@ -1,25 +1,32 @@
 ﻿using CiliPizzaOder;
+using CiliPizzaOder.Entities;
 using CiliPizzaOder.Repositories;
+using System.Collections.Generic;
 
 namespace CiliPizzaOrder
 {
     public class Program
     {
-
-
+       
+        
         public static void Main(string[] args)
         {
-            var drink = new DrinksRepository();
+          
+            var drinkReprsytory = new DrinksRepository();
+            var ordersRepository = new OrdersRepository();
             var food = new FoodRepository();
-            var order = new OrdersRepository();
-            
-            
-            //var  name = order.WaitressTips;
-            //var drink = new DrinksRepository();
-            //drink.
+            var order = new Order();
+            var mainMenu = new MainMenu();
+            mainMenu.LogIn();
+
+            //var naujasListas = new List<string>() { "Petras", "Jonas", "Antanas" };
+            //order.PrintOrderList(naujasListas);
+            //Console.ReadKey();
+
+            //order.PrintList(List<Drink> Drinks);
             MainMenu runMainMenu = new MainMenu();
-            //runMainMenu.RunMainMenu();
-            runMainMenu.TakeTableOrder_1();
+            runMainMenu.RunMainMenu();
+            //runMainMenu.TakeTableOrder_1();
 
             //DateTime dateTime = DateTime.Now;
             //Console.WriteLine(dateTime.ToString("MM/dd/yyyy HH:mm"));
@@ -30,5 +37,6 @@ namespace CiliPizzaOrder
 
             //runMainMenu.RunMainMenu();
         }
+        
     }
 }

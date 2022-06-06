@@ -1,4 +1,5 @@
 ﻿using CiliPizzaOder.Entities;
+using CiliPizzaOder.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -73,17 +74,26 @@ namespace CiliPizzaOder
                         SelectedIndex = 0;
                     }
                 }
-                else if (keyPressed == ConsoleKey.E)
-                {
-                    //TableRepository list ORder 
-                    var order = new Order();
-                    var tableOrders = order.TableRepository;
-                    
-                    Console.WriteLine($" jus pasirinkote {SelectedIndex.ToString(Options[SelectedIndex])} \n" +
-                        $"icestite kieki ");
-                    int quantity = Convert.ToInt32(Console.ReadLine());
-                    tableOrders.Add(new Entities.Order(Options[SelectedIndex], Convert.ToDecimal(2.20), quantity, "Justinas", "123msdk21asd", 12, DateTime.Now, false));
-                }
+                //else if (keyPressed == ConsoleKey.E)
+                //{
+                //    //TableRepository list ORder 
+                //    var order = new Order();
+                //    var tableOrders = order.TableRepository;
+                //    var mainMenu = new MainMenu();
+                //    var drinksRepository = new DrinksRepository();
+                //    var drinks = drinksRepository.Drinks;
+                //    //var takeOrder = mainMenu.TakeTableOrder_1();
+                //    //var selectedTableNumber = mainMenu.TableOrders(tableNumber);
+                //    //Char lasChar = [Length - 1]) ; 
+                //    Console.WriteLine($" jus pasirinkote {SelectedIndex.ToString(Options[SelectedIndex])} \n" +
+                //        $"ivestite kieki ");
+                //    int quantity = Convert.ToInt32(Console.ReadLine());
+                //    int table = Convert.ToInt32(Console.ReadLine());
+                //    tableOrders = new List<Order>();
+                //    tableOrders.Add(new Entities.Order("fanta", Convert.ToDecimal(2.20), quantity, "Justinas", "123msdk21asd",
+                //       table , DateTime.Now, false));
+                //    //Console.WriteLine(tableOrders[0]);
+                //}
             } while (keyPressed != ConsoleKey.Enter);  //Lupas veiks tol kol nepaspaus Enter
 
             return SelectedIndex;   //grasinama Indeksas ir kiekviena karta atnaujinamas (online update)

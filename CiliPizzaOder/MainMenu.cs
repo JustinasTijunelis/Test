@@ -1,5 +1,6 @@
 ﻿using CiliPizzaOder.Entities;
 using CiliPizzaOder.Repositories;
+using CiliPizzaOrder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,37 +9,32 @@ using System.Threading.Tasks;
 
 namespace CiliPizzaOder
 {
+
     public class MainMenu
     {
-        //public decimal X { get; set; }
-        //public MainMenu(decimal x)
-        //{
-        //    X = x;
-        //}
-
+        
+        public string LogIn()
+        {
+            Console.WriteLine("Please Log in");
+            Console.WriteLine("Enter your Name");
+            string waiterName = Console.ReadLine();
+            return waiterName;
+        }
         public void RunMainMenu()
         {
             string prompt = @"
-
-   ▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
-  ▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
-  ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌
-  ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌
-  ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌
-  ▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░▌ ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
-  ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀█░█▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌▐░█▀▀▀▀█░█▀▀ ▐░█▀▀▀▀▀▀▀█░▌
-  ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌     ▐░▌  ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌     ▐░▌  ▐░▌       ▐░▌
-  ▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░▌      ▐░▌ ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌      ▐░▌ ▐░▌       ▐░▌
-  ▐░░░░░░░░░░▌ ▐░▌       ▐░▌▐░▌       ▐░▌▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌       ▐░▌
-   ▀▀▀▀▀▀▀▀▀▀   ▀         ▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀   ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀         ▀ 
-                                                                                             
-Sveiki atvyke i elektronine Maximos parduotuve
+     ______     __     __         __        ______   __     ______     ______     ______       
+    /\  ___\   /\ \   /\ \       /\ \      /\  == \ /\ \   /\___  \   /\___  \   /\  __ \      
+    \ \ \____  \ \ \  \ \ \____  \ \ \     \ \  _-/ \ \ \  \/_/  /__  \/_/  /__  \ \  __ \     
+     \ \_____\  \ \_\  \ \_____\  \ \_\     \ \_\    \ \_\   /\_____\   /\_____\  \ \_\ \_\    
+      \/_____/   \/_/   \/_____/   \/_/      \/_/     \/_/   \/_____/   \/_____/   \/_/\/_/    
+                                                                                           
+                                Welcome to the best Pizza House
 ----------------------------------------------------------------------------------------------
+Cili Pizza Order platform
 
-Pasirinkite is meniu ir spauskite ENTER
-
-";
-
+                ";
+            
             string[] options = { "Table Orders", "Turnover of the day", "Waitress tips", "LOG OFF" };
             Menu mainMenu = new Menu(options, prompt);
             int selectedIndex = mainMenu.Run();
@@ -64,209 +60,140 @@ Pasirinkite is meniu ir spauskite ENTER
 
             }
         }
+       
         private void TableOrders()
         {
-            decimal x = 0;
-            string prompt = "Jusu asmenine pinigine BARBOROS e-parduotuveje \n " +
-                "Pasirinkeite is meniu ir spauskite Enter \n" +
-                "---------------------------------------------------------------";
-            Console.WriteLine($"Jusu pinigineje {x} EUR");
-            string[] options = { "Table 1", "Table 2", "Table 3", "Table 4", "Back" };
-            Menu walletMenu = new Menu(options, prompt);
-            int selectedIndex = walletMenu.Run();
-            switch (selectedIndex)
-            {
-                case 0:
-                    //Table_1();
-                    break;
-                case 1:
-                    //Table_2();
-                    break;
-                case 2:
-                    //Table_3();
-                    break;
-                case 3:
-                    //Table_4();
-                    break;
-                case 4:
-                    RunMainMenu();
-                    break;
-            }
-
-        }
-        private void Table_1()
-        {
-        decimal x = 0;
-        string prompt = "Jusu asmenine pinigine BARBOROS e-parduotuveje \n " +
-            "Pasirinkeite is meniu ir spauskite Enter \n" +
+        
+        string prompt = "Make some order !!! \n " +
+            "Select from the menu and push Enter \n" +
             "---------------------------------------------------------------";
-        Console.WriteLine($"Jusu pinigineje {x} EUR");
-        string[] options = { "Take table Order", "Ceck Order", "Pay Order", "Back" };
+        string[] options = { "Take table Order", "Ceck Order", "Back" };
         Menu walletMenu = new Menu(options, prompt);
         int selectedIndex = walletMenu.Run();
         switch (selectedIndex)
         {
             case 0:
-                TakeTableOrder_1();
+                TakeTableOrder();
                 break;
             case 1:
                 CeckOrder_1();
                 break;
             case 2:
-                PayOrder_1();
-                break;
-            case 3:
                 TableOrders();
                 break;
         }
 
     }
-        public void TakeTableOrder_1()
+        public void TakeTableOrder()
         {
-            int tableId = 0001; //kiekvienas staliukas turi savo Id
+            //int tableId = 0001; //kiekvienas staliukas turi savo Id
 
-        var drinkRepository = new DrinksRepository(); //Issibviesti klase
-        var foodRepository = new FoodRepository();
-        var drinks = drinkRepository.Drinks; //Issikviesti Lista
-        var food = foodRepository.Foods;
+            var drinkRepository = new DrinksRepository(); //Issibviesti klase
+            var foodRepository = new FoodRepository();
+            var drinks = drinkRepository.Drinks; //Issikviesti Lista
+            var food = foodRepository.Foods;
 
-        string[] drinsArrayName = drinks.Select(x => x.Name).ToArray();
-        string[] foodArrayName = food.Select(x => x.Name).ToArray();
-        var products = foodArrayName.Concat(drinsArrayName).ToArray();
+            string[] drinsArrayName = drinks.Select(x => x.Name).ToArray();
+            string[] foodArrayName = food.Select(x => x.Name).ToArray();
+            var products = foodArrayName.Concat(drinsArrayName).ToArray();
             //Listo pirma dali "Name" convertina i Array - gali buti metodas
 
-        var order = new Order();
-        var tableOrders = order.TableRepository;
-            
-        decimal x = 0;
-        string prompt = "Jusu asmenine pinigine BARBOROS e-parduotuveje \n " +
-            "Pasirinkeite is meniu ir spauskite Enter \n" +
-            "---------------------------------------------------------------";
-        Console.WriteLine($"Jusu pinigineje {x} EUR");
+            var order = new Order();
+            var tableOrders = order.TableRepository;
 
-        string[] options = products; //reikia ideti arreju string[] ;
-        Menu walletMenu = new Menu(options, prompt);
-        int selectedIndex = walletMenu.Run();
+            string prompt = "--------------- \n " +
+                "Select from the menu and push Enter \n" +
+                "---------------------------------------------------------------";
+            //Console.WriteLine($"Jusu pinigineje {x} EUR");
 
-            //ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-            //ConsoleKey keyPressed;
-            //keyPressed = keyInfo.Key;
+            string[] options = products.Concat(new string[] { "Back" }).ToArray();
+           
+            Menu walletMenu = new Menu(options, prompt);
+            int selectedIndex = walletMenu.Run();
 
-            //if (keyPressed == ConsoleKey.Y && selectedIndex == options[0].Length)
-            //{
-
-            //    Console.WriteLine($"Pasirintkai {options[0]}");
-            //    Console.ReadLine();
-
-            //    //selectedIndex--;
-            //    //int quantity = Convert.ToInt32(Console.ReadLine());
-            //    //string name, decimal price, int quantity, DateTime dateTime, string waiterName
-
-
-            //    //tableOrders.Add(new Entities.Order ("arbata", 2.2, 2, "02-12-2022", "Justinas"));
-
-            //}
-        //switch (selectedIndex)
-        //{
-            //    case 0:
-            //        //TakeTableOrder_1();
-            //        break;
-            //    case 1:
-            //        //CeckOrder_1();
-            //        break;
-            //    case 2:
-            //        //PayOrder();
-            //        break;
-            //    case 3:
-            //        TableOrders();
-            //        break;
-            //}
+            if (options[selectedIndex].Contains("Back"))
+            {
+                TableOrders();
+            }
+            else
+            {
+                //var orderList = new OrderRepository(new Order (new List<Order>()));
+                int quantity = Convert.ToInt32(Console.ReadLine());
+                int table = Convert.ToInt32(Console.ReadLine());
+                tableOrders = new List<Order>();
+                //TableRepository = new List<Order>();
+                tableOrders.Add(new CiliPizzaOder.Entities.Order("fanta", Convert.ToDecimal(2.20), quantity, "Justinas", "123msdk21asd",
+                   table, DateTime.Now, false));
+                tableOrders.ForEach(e => Console.WriteLine(e));
+                Console.ReadKey();
+                TakeTableOrder();
+                
+            }
+           
 
         }
         public void CeckOrder_1()
         {
-        decimal x = 0;
-        string prompt = "Jusu asmenine pinigine BARBOROS e-parduotuveje \n " +
-            "Pasirinkeite is meniu ir spauskite Enter \n" +
+        string prompt = "Your Orders \n " +
+            "Select from the menu and push Enter \n" +
             "---------------------------------------------------------------";
-        Console.WriteLine($"Jusu pinigineje {x} EUR");
-        string[] options = {  "Back" };
+        string[] options = { "Pay Ordres",  "Back" };
         Menu walletMenu = new Menu(options, prompt);
         int selectedIndex = walletMenu.Run();
             //var ordersRepository = new OrdersRepository();
-        var ordersRepository = new Order();
-            ordersRepository.PrintList(ordersRepository.TableRepository);
+            Console.WriteLine("Enter Table number");
+            string tableNum = Console.ReadLine();
+
+        var order = new CiliPizzaOder.Entities.Order();
+            var selectedTableList = order.TableRepository.Where(i => i.TableId.Equals(tableNum) && i.Paid == false).ToList();
+           order.PrintOrderList(selectedTableList);
 
         switch (selectedIndex)
             {
             case 0:
-                 Table_1();
+                 selectedTableList.Select(i => i.Paid = true);
+                    Console.WriteLine("Order has been paid");
+                    Console.ReadKey();
+                 break;
+             case 1:
+                 TableOrders();
                  break;
             }
 
         }
-        private void PayOrder_1()
-        {
-        decimal x = 0;
-        string prompt = "Jusu asmenine pinigine BARBOROS e-parduotuveje \n " +
-            "Pasirinkeite is meniu ir spauskite Enter \n" +
-            "---------------------------------------------------------------";
-        Console.WriteLine($"Jusu pinigineje {x} EUR");
-        string[] options = { "Take table Order", "Ceck Order", "Pay Order", "Back" };
-        Menu walletMenu = new Menu(options, prompt);
-        int selectedIndex = walletMenu.Run();
-        switch (selectedIndex)
-            {
-            case 0:
-                //TakeTableOrder();
-                break;
-            case 1:
-                //CeckOrder();
-                break;
-            case 2:
-                //PayOrder();
-                break;
-            case 3:
-                TableOrders();
-                break;
-            }
-
-        }
-
         private void TurnoverOfTheDay()
         {
-            decimal x = 0;
-            string prompt = "Jusu asmenine pinigine BARBOROS e-parduotuveje \n " +
-                "Pasirinkeite is meniu ir spauskite Enter \n" +
+            
+            string prompt = "Turnover of fhe Day \n " +
+                "Select from the menu and push Enter \n" +
                 "---------------------------------------------------------------";
-            Console.WriteLine($"Jusu pinigineje {x} EUR");
-            string[] options = { "Inesti lesas", "Issiimti lesas" };
+            string[] options = { "Back" };
             Menu walletMenu = new Menu(options, prompt);
             int selectedIndex = walletMenu.Run();
             switch (selectedIndex)
             {
                 case 0:
-                    //WolletCashIn(x);
-                    break;
-                case 1:
-                    //WolletCashOut();
+                    TableOrders();
                     break;
             }
 
         }
         public void WaitressTips()
         {
-            decimal x = 0;
-            string prompt = "Jusu asmenine pinigine BARBOROS e-parduotuveje \n " +
-                "Pasirinkeite is meniu ir spauskite Enter \n" +
+
+            var program = new MainMenu();
+            var waiterName = program.LogIn(); //negrazina man padavejos 
+            
+            string prompt = $" {waiterName} Jusu asmenine pinigine BARBOROS e-parduotuveje \n " +
+                "Select from the menu and push Enter \n" +
                 "---------------------------------------------------------------";
-            Console.WriteLine($"Jusu pinigineje {x} EUR");
+           
             string[] options = { "Back" };
             Menu walletMenu = new Menu(options, prompt);
             int selectedIndex = walletMenu.Run();
 
             var ordersRepository = new Order();
-            ordersRepository.PrintList(ordersRepository.WaitressTips);
+            ordersRepository.PrintList(new List<decimal> (ordersRepository.WaitressTips));
             //Ieinam i metoda kuris parodo dienos arbatpinigius
 
             switch (selectedIndex)
