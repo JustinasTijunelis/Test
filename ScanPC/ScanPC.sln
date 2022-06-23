@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScanPC", "ScanPC.csproj", "{276A3A77-9C01-4B67-9962-E6AB7716E7B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScanPC.BL", "..\ScanPC.BL\ScanPC.BL.csproj", "{929032A9-C8F1-431D-90FA-2A7F17C02A8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScanPC.DB", "..\ScanPC.DB\ScanPC.DB.csproj", "{D70EF406-EBB8-43AE-B668-7E5C0AEB982B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{276A3A77-9C01-4B67-9962-E6AB7716E7B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{276A3A77-9C01-4B67-9962-E6AB7716E7B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{276A3A77-9C01-4B67-9962-E6AB7716E7B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{276A3A77-9C01-4B67-9962-E6AB7716E7B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{929032A9-C8F1-431D-90FA-2A7F17C02A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{929032A9-C8F1-431D-90FA-2A7F17C02A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{929032A9-C8F1-431D-90FA-2A7F17C02A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{929032A9-C8F1-431D-90FA-2A7F17C02A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D70EF406-EBB8-43AE-B668-7E5C0AEB982B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70EF406-EBB8-43AE-B668-7E5C0AEB982B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70EF406-EBB8-43AE-B668-7E5C0AEB982B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70EF406-EBB8-43AE-B668-7E5C0AEB982B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DC84C6D-D458-4790-907A-A1717ADBE210}
+	EndGlobalSection
+EndGlobal
